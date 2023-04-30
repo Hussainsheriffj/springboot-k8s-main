@@ -6,8 +6,7 @@ yum update -y
 
 4. Install the latest Docker Engine packages.
 
-Amazon Linux 2 amazon-linux-extras install 
-docker yum install docker -y
+amazon-linux-extras install docker
 
 5. Start the Docker service.
 
@@ -17,6 +16,7 @@ systemctl enable docker
 6. Install Conntrack:
 
 yum install conntrack -y
+yum install git -y
 
 7. Install k8
 
