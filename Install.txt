@@ -37,15 +37,24 @@ curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stabl
 
 sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
 
-/usr/local/bin/kubectl version
+/usr/local/bin/kubectl version 
+cd /opt/
+git clone git@github.com:Hussainsheriffj/springboot-k8s-main.git
 
 10. Make the DB up
-
+/usr/local/bin/kubectl get pods
+/usr/local/bin/kubectl create -f db-deployment.yaml
+/usr/local/bin/kubectl exec -it mysql-f759455cd-bp58w /bin/bash           --to enter the container
+mysql -u root -p
+root                      --entered root when password was asked
+show databases;
+exit
+exit
 11.yum install maven -y	
-
+mvn -v
 12. Create the docker image
 
-docker build -t praveensingam1994/springboot-crud-k8s:1.0 .
+docker build -t hussainsheriffj/demo-app:1.0 .
 
 13. docker login
 
